@@ -55,9 +55,7 @@ def guess_file_hash_file(hash_func, hash_file, guess_file, verbose=False):
     with open(hash_file, 'rb') as f1:
         for hash in f1:
             with open(guess_file, 'rb') as f2:
-                print(hash)
                 for guess in f2:
-                    print(guess)
                     tmp_hash_func = hash_func.copy()
                     tmp_return_value = single_guess_single_hash(tmp_hash_func, hash.strip(), guess.strip(), verbose) 
                     if tmp_return_value is not None:
